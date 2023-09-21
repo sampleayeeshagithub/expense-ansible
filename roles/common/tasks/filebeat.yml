@@ -1,0 +1,12 @@
+- name: clone infra ansible repo
+  ansible.builtin.git:
+    repo: 'https://github.com/sampleayeeshagithub/infra-ansible.git'
+    dest: /tmp/infra-ansible
+
+- name: run shell command
+  shell: pwd
+  register: out
+
+- name: debug
+  debug:
+    msg: "{{ out }}"
